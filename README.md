@@ -1,7 +1,7 @@
 ### GENERAL ASSAMBLY / WDI 43 - 2017
 
  ![IRKAT](http://i.imgur.com/xKn2oFy.png?1)
- 
+ ![GA](https://github.com/generalassembly/ga-ruby-on-rails-for-devs/raw/master/images/ga.png)
 # Project 2
 
 ##RADAR
@@ -11,91 +11,96 @@
 
 
 #INSTALLATION  INSTRUCTIONS#
-- Clone the Repository file
-- Click the link on the game GitHub to open in your browser.
-  
-  <br>
-  <br>
+<ol>
+<li>Clone Repository</li>
+<li>Open app directory</li>
+<li>install gems</li>
+<li>Open Rails server</li>
+<li>go to localhost:3000 in your web browser</li>
+</ol>
+
+#INTRO
+
+Every day we choose to live our lives, to get up an go through our day but no matter what our believes, conceptions or current state of consciousness is, there are many things that are there that we can't or we want to know about it. But there are always in our Radar.
   
 #APPROACH#
 
-As a student of the WDI program at General Assembly, I have had the privilege of learning new skills that, besides teaching me the technical aspects of web development, have also helped me to see things from a different perspective when it comes to problem solving.
+This application will run a database of articles on diferent topics allowing users to create a password protected profile generate an alias, access this articles, post comments on them and also being able to read some other user comments.
 
-This first project, Penalty Kicks, fulfills the minimum requirements in full (MVP) and also accomplishes some stretch goals.
-
-In order to create a successful game, I focused mainly on the game logic, which states that a player has to release the ball during a specific time frame in order to score a goal. Using HTML, CSS, Javascript, Jquery and GarageBand - among other softwares - I was able to build a game that I hope you will enjoy!
-
-<br>
-#WIREFRAME#
-<br>
-
-<br>
-***Welcome***
-![Welcome Screen](http://i.imgur.com/gdIKImY.jpg)
-
-<br>
-***The Kick***
-![The Kick](http://i.imgur.com/ry27oj8.jpg)
-
-<br>
-***Celebration***
-![Celebration](http://i.imgur.com/WRIj8II.jpg)
-
-<br>
-***Final Score***
-![Final Score](http://i.imgur.com/AzCsdWv.jpg)
-<br>
-
-
-<br>
 #USER STORIES
 <br>
 
 **Check out our trello board**
 
- *https://trello.com/b/lbkkZHK9/wdi43-project1-penaltykicks*
+ *https://trello.com/b/nw8Y4vQJ/wdi43-project2-radar*
  
+ <br>
  
+ <hr>
 <br>
+#ERD
+<br>
+![ERD](http://i.imgur.com/X5HPDvY.jpg)
+<br>
+<br>
+<hr>
+#WIREFRAME#
+<br>
+
+<br>
+![MVP](http://i.imgur.com/o2uGGKZ.jpg)
+
+<br>
+<br>
+<hr>
 #MVP
 <br>
 
 **The minimum project requirements are**
 	
   
-  - Allow the player to **kick a ball** into a penalty kick
+  - Display **articles** along with support data (links to sources, images and videos)
   
-  - Allow the player to **switch turns** after every shoot
+  - Allow users to set up **secure accounts** and **alias**.
   
-  - keep an accurate **score record** (5 shoots per player)
+  - Allow **users** to visualize **articles**, **comment** and **read other users comments**  
   
-  - Inform when a **player wins** the game and **reset** the game
+  - Allow users to **edit or delete** comments that have been posted
 
 <br>
+<hr>
 ## STRECTCH GOALS
 <br>
 
-- Develop a player's better interaction with the ball, kick, goal and goalie
-- Improve the movement on the goalie by setting and x and y paramenter for each limb.
+![STRETCH](http://i.imgur.com/jG1l6zr.jpg)
 
-- Improve background display and sound effects to create a better 'atmosphere' for
-  the game.
-  
-- Allow the player use the keeper to save a shot
+- Allow users to:
+	- 	**run a search** based on parameters of their choice.
+	
+	-  **post new articles** and related data.
+	
+	-  Be able to **reply to specific comments** that have been posted on an article.
+	
+	-  Run geolocalized search of articles.
+- Create and deliver promptly a newsletter for suscribed users.
+- Organize and coordinate events to allow registered users to meet around topics of common interest.
+- Play music for customer while using the application.
 
 <br>
 ## TECHNOLOGIES USED
 <br>
 
+- Ruby on Rails
+- PostgresQL
 - HTML
-- CSS
-- Some vanilla JavaScript and JQuery
-- Microsoft Office
-- GarageBand
+- SCSS
+- Javascript
+- JQuery
+- Github
+- Heroku
 
 
 <br>
 ## UNSOLVED PROBLEMS
 <br>
-- SET A MODAL WINDOW WITH MUSIC TO RESTART THE GAME
-- AUDIO GLITCHES
+- Coming soon (hopefully not too many!)
