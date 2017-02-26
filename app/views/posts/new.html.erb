@@ -4,8 +4,7 @@
 
   Topic:
   <div>
-    <%= f.collection_select(:topic_id, Topic.all) %>
-      <% end %>
+    <%= collection_for_select(:post, :topic_id, Topic.all, prompt: true) %>
   </div>
   Location:
   <ul>
@@ -21,7 +20,6 @@
         <%= location_form.text_field :details %>
 
       </li>
-    <% end %>
   </ul>
     <div>
         <%= f.label :subject %>
@@ -41,5 +39,4 @@
     <%= f.submit "Submit New Post!" %>
 
 <% end %>
-
-<%= link_to "Back to the list!", posts_path %>
+<% end %>

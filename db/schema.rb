@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170225215947) do
+ActiveRecord::Schema.define(version: 20170226192712) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,13 +42,12 @@ ActiveRecord::Schema.define(version: 20170225215947) do
   end
 
   create_table "topics", force: :cascade do |t|
-    t.string   "unsolve"
-    t.string   "mysteries"
     t.string   "space_and_astronomy"
     t.string   "paranormal"
     t.string   "conspiracies"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
+    t.string   "unsolve_mysteries"
   end
 
   create_table "users", force: :cascade do |t|
