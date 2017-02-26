@@ -6,6 +6,9 @@ class PostsController < ApplicationController
   def show
   end
   def new
+    @post = Post.new(post_params)
+    @post.location.build
+    @post.topic.build
   end
   def create
     @post = Post.new(post_params)
@@ -29,10 +32,10 @@ class PostsController < ApplicationController
     @post.destroy
     redirect_to posts_path
   end
-  
+
 private
   def post_params
-    params.require(:post).permit(:date, :subject, :data).merge(:location_id => params[:id], :topic_id => params[:id])
+    params.require(:post).permit(:date, :subject, :data).merge(location_attributes: [:country, :city, :details], topic_attributes: [:unsolve_misteries, :space_and_astronomy, :paranormal, :conspiracies])
   end
   def set_post
     @post = Post.find(params[:id])
