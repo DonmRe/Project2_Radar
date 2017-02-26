@@ -1,0 +1,24 @@
+<h1>Add a new post!</h1>
+
+<%= form_for @post do |f| %>
+
+    <div>
+        <%= f.label :subject %>
+        <%= f.text_field :subject %>
+    </div>
+
+    <div>
+        <%= f.label :date %>
+        <%= f.integer :date %>
+    </div>
+
+    <div>
+        <%= f.label :data %>
+        <%= f.text_area :data %>
+    </div>
+
+    <%= f.submit "Submit New Post!" %>
+
+<% end %>
+
+<%= link_to "Back to the list!", posts_path %>

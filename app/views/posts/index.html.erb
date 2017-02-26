@@ -1,0 +1,10 @@
+<h1>Latest Posts</h1>
+
+<ul>
+    <% @posts.each do |post| %>
+        <li>
+            <strong><%= post.subject %></strong> - <%= post.topic %>
+            <%= link_to "More info", post_path(post) %>
+        </li>
+    <% end %>
+</ul>
