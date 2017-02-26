@@ -35,7 +35,7 @@ class PostsController < ApplicationController
 
 private
   def post_params
-    params.require(:post).permit(:date, :subject, :data).merge(location_attributes: [:country, :city, :details], topic_attributes: [:unsolve_misteries, :space_and_astronomy, :paranormal, :conspiracies])
+    params.require(:post).permit(:date, :subject, :data).merge(:location_id => params[:country, :city, :details], :topic_id => params[:unsolve_misteries, :space_and_astronomy, :paranormal, :conspiracies])
   end
   def set_post
     @post = Post.find(params[:id])

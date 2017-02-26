@@ -4,9 +4,8 @@
 
   Topic:
   <div>
-    <%= topic_select(Topic.all) %>
+    <%= f.collection_select(:topic_id, Topic.all) %>
       <% end %>
-
   </div>
   Location:
   <ul>
