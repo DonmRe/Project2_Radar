@@ -1,8 +1,10 @@
 <h1>Edit this Post</h1>
 
 <%= form_for @post do |f| %>
+    <div>
+    Topic <%= f.select :topic, options_for_select([["Select One Topic", ""], "Unsolved Mysteries", "Space & Astronomy", "Paranormal", "Conspiracies"]), :class => 'genForm_dropBox' %>
+    </div>
 
-<%= f.select :topic, options_for_select([["Select One", ""], "Unsolve Mysteries", "Space & Astronomy", "Paranormal", "Conspiracies"]), :class => 'genForm_dropBox' %>
     <div>
         <%= f.label :subject %>
         <%= f.text_field :subject %>
