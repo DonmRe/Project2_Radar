@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     @user.email.downcase!
-    @user.alias.downcase!
+    @user.alias.upcase!
 
     if @user.save
       flash[:notice] = "Welcome to our Radar"

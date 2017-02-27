@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'pages/secret'
+
   root "posts#index"
   get "posts/" => "posts#index"
 

@@ -9,6 +9,12 @@
   </head>
 
   <body>
+    <% if current_user %>
+      <%= "#{current_user.alias.capitalize!} is searching the RADAR" %> | <%= link_to 'Main', root_path %> | <%= link_to 'Log Out', logout_path, method: :delete %>
+    <% else %>
+      <%= link_to 'Main', root_path %> | <%= link_to 'Log In', login_path %> or <%= link_to 'Join us', new_user_path %>
+    <% end %>
+    <hr>
     <% if notice %>
       <%= notice %>
     <% end %>
