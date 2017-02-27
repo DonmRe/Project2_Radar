@@ -10,4 +10,13 @@ Rails.application.routes.draw do
 
   get "posts/:id" => "posts#show", as: :post
   delete "posts/:id" => "posts#destroy"
+
+  ## user routes
+  get "users/new" => "users#new", as: :new_user
+  post "users" => "users#create"
+
+  ##sessions routes
+  get "/login" => "sessions#new"
+  post "/login" => "sessions#create"
+  delete "/logout" => "sessions#destroy"
 end

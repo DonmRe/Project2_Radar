@@ -11,10 +11,14 @@ class UsersController < ApplicationController
   end
   def create
     @user = User.new(user_params)
+    @user.email.downcase!
+    @user.alias.downcase!
 
     if @user.save
-      redirect_to users_path
+      flash[:notice] = "Welcome to our Radar"
+      redirect_to root_path
     else
+      flash.now.alert = "Attempt failed. Please check your email, password and alias and try again."
       render :new
     end
   end
@@ -35,7 +39,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :alias, :password)
+    params.require(:user).permit(:name, :email, :alias, :password, :password_confirmation)
   end
   def set_user
     @user = User.find(params[:id])
