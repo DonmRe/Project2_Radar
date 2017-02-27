@@ -40,7 +40,7 @@ This application will run a database of articles on diferent topics allowing use
 <br>
 #ERD
 <br>
-![ERD](http://i.imgur.com/X5HPDvY.jpg)
+![ERD](http://i.imgur.com/MtXJ1k5.png)
 <br>
 <br>
 <hr>
