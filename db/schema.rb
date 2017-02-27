@@ -10,44 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170226192712) do
+ActiveRecord::Schema.define(version: 20170226215803) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "comments", force: :cascade do |t|
-    t.text     "comment"
-    t.integer  "user_id"
-    t.integer  "post_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "locations", force: :cascade do |t|
-    t.string   "country"
-    t.string   "city"
-    t.text     "details"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "posts", force: :cascade do |t|
-    t.integer  "date"
+    t.string   "topic"
+    t.string   "place"
     t.string   "subject"
+    t.string   "date"
     t.text     "data"
-    t.integer  "location_id"
-    t.integer  "topic_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  create_table "topics", force: :cascade do |t|
-    t.string   "space_and_astronomy"
-    t.string   "paranormal"
-    t.string   "conspiracies"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
-    t.string   "unsolve_mysteries"
+    t.text     "comments"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -55,6 +31,7 @@ ActiveRecord::Schema.define(version: 20170226192712) do
     t.string   "email"
     t.string   "alias"
     t.string   "password_digest"
+    t.integer  "comment_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end

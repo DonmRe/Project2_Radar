@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Radar2</title>
+    <title>ProjectRadar</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,9 @@
   </head>
 
   <body>
+    <%= "Hello #{current_user.name}" if current_user %>
+    <hr>
+    <%= link_to 'Log Out', logout_path, method: :delete %>
     <%= yield %>
   </body>
 </html>

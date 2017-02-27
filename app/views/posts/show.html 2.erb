@@ -1,0 +1,8 @@
+<h1> <%= @post.subject %> </h1>
+
+<ul> <%= @post.topic %>
+  <li> Date <%= @post.date %></li>
+  <li> Location <%= @location.country %>, <%= @location.city %>, <%= @location.details %></li>
+  <li><%= @post.data %></li>
+
+  <%= link_to "Back", posts_path %>

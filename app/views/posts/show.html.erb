@@ -1,8 +1,13 @@
-<h1> <%= @post.subject %> </h1>
+<h1> <%= @post.topic %> </h1>
 
-<ul> <%= @post.topic %>
-  <li> Date <%= @post.date %></li>
-  <li> Location <%= @location.country %>, <%= @location.city %>, <%= @location.details %></li>
-  <li><%= @post.data %></li>
+<h2> <%= @post.subject %> </h2>
 
-  <%= link_to "Back", posts_path %>
+<p> Location <%= @post.location %> Date <%= @post.date %></p>
+
+   <p> <%= @post.data %> </p>
+
+   <p> <%= @post.comments %>
+
+<%= link_to "Main list", posts_path %>
+<%= link_to "Edit this post!", edit_post_path(@post) %>
+<%= link_to "Delete this post!", post_path, method: :delete, data: { confirm: "Are you sure you want to delete this post?"} %>

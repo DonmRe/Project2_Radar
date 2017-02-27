@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+
   def index
     @posts = Post.all
   end
@@ -21,7 +22,7 @@ class PostsController < ApplicationController
   end
   def update
     if @post.update_attributes(post_params)
-      redirect_to :posts
+      redirect_to posts_path
     else
       render :edit
     end
@@ -31,9 +32,23 @@ class PostsController < ApplicationController
     redirect_to posts_path
   end
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 private
+
   def post_params
-    params.require(:post).permit(:date, :subject, :data)
+    params.require(:post).permit(:topic, :place, :subject, :date, :data)
   end
   def set_post
     @post = Post.find(params[:id])
