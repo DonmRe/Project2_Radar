@@ -1,11 +1,18 @@
-<h1>Today's Posts</h1>
+<h1>RADAR</h1>
     <ul>
     <% @posts.each do |post| %>
     <li>
-    subject <%= post.topic %> - <%= post.subject %>
+    TOPIC <%= post.topic %>
+    <br>
+    SUBJECT <%= post.subject %>
+    <hr>
+    PLACE <%= post.place %> DATE <%= post.date %>
+    <br>
+    DATA  <%= post.data %>
+    <hr>
     </li>
     <% end %>
     <%= link_to "New", :new_post %>
-    
+
 
   </ul>
