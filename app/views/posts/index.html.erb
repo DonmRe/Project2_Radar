@@ -1,25 +1,37 @@
 <h1>RADAR</h1>
-    <ul>
+<ul>
     <% @posts.each do |post| %>
     <hr><hr>
-    <h1> <%= post.subject %> </h1>
+    <h1>
+        <%= post.subject %>
+    </h1>
     <hr>
 
-    <h3>  <%= post.topic %> </h3>
+    <h3>
+        <%= post.topic %>
+    </h3>
     <hr>
 
-    <p> Location <%= post.place %>   |  Date <%= post.date %></p>
+    <p>
+        Location
+        <%= post.place %>
+        | Date
+        <%= post.date %></p>
 
-    <div> Data <%= post.data %> </div>
+    <div>
+        Data
+        <%= post.data[0...200] %>...
+    </div>
 
-    <div> Comments </div>
+    <div>
+      
+    </div>
 
     <br>
-    views
+    Views  | [<%= post.comments.count  %>]
     <%= link_to "Details", post_path(post) %>
 
     <hr>
     <% end %>
 
-
-  </ul>
+</ul>

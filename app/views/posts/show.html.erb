@@ -1,18 +1,37 @@
 <ul>
 
-<h1> <%= @post.subject %> </h1>
+    <h1>
+        <%= @post.subject %>
+    </h1>
 
-<h3>  <%= @post.topic %> </h3>
+    <h3>
+        <%= @post.topic %>
+    </h3>
 
-<p> Location <%= @post.place %>   |    Date <%= @post.date %></p>
+    <p>
+        LOCATION
+        <%= @post.place %>
+        | DATE
+        <%= @post.date %></p>
 
-<div> Data <%= @post.data %> </div>
-<hr>
-<table>Previous Comments</br>
-  <% @post.comments.each do |c| %>
-  <tr> By <%= c.user.alias %> - <%= c.comment %> </tr>
+    <div>
+        DATA
+        <%= @post.data %>
+    </div>
+    <hr>
+    <table>COMMENTS</br>
+    <% @post.comments.each do |c| %>
+
+    <br>
+    <tr>
+        By <%= c.user.alias %> - <%= c.comment %>
+        <%= link_to "Delete", post_comment_path(@post, c), method: :delete if current_user == c.user %>
+    </tr><br>
 </table>
-<hr>
 <% end %>
-<div> Comments </div>
+<hr>
+<div>
+    LEAVE A COMMENT
+</div>
+<br>
 <%= render 'comments/form' %>

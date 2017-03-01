@@ -13,6 +13,6 @@ class SessionsController < ApplicationController
   end
   def destroy
     session.delete(:user_id)
-    redirect_to login_path, notice: "You're off the Radar"
+    redirect_to root_path, notice: "You're off the Radar"
   end
 end

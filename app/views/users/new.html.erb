@@ -1,30 +1,30 @@
 <h1>Create a new profile</h1>
 
 <%= form_for @user do |f| %>
-  <div>
+<div>
     <%= f.label :name %>
     <%= f.text_field :name, autofocus: true %>
-  </div>
-  <div>
+</div>
+<div>
     <%= f.label :email %>
     <%= f.text_field :email %>
-  </div>
+</div>
 
-  <div>
+<div>
     <%= f.label :alias %>
     <%= f.text_field :alias %>
-  </div>
+</div>
 
-  <div>
+<div>
     <%= f.label :password %>
     <%= f.password_field :password %>
-  </div>
-  <div>
+</div>
+<div>
     <%= f.label :password_confirmation %>
     <%= f.password_field :password_confirmation %>
-  </div>
-  <div>
+</div>
+<div>
     <%= f.submit "Confirm" %>
-  </div>
+</div>
 
 <% end %>

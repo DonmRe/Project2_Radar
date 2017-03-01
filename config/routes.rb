@@ -27,7 +27,8 @@ Rails.application.routes.draw do
 
   get "posts/:post_id/comments/new" => "comments#new", as: :new_comment
   post "posts/:post_id/comments/" => "comments#create"
-  get "posts/:id/comments/:id/edit" => "comments#edit", as: :edit_comment
+  get "posts/:post_id/comments/:id/edit" => "comments#edit", as: :edit_comment
+  delete "posts/:post_id/comments/:id" => "comments#destroy"
 
   ##sessions routes
   get "/login" => "sessions#new"

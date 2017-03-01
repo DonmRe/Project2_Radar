@@ -1,27 +1,35 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>RADAR</title>
-    <%= csrf_meta_tags %>
+    <head>
+        <title>RADAR</title>
+        <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    </head>
 
-  <body>
-    <% if current_user %>
-      <%= "#{current_user.alias.capitalize!} is searching the RADAR" %> | <%= link_to 'Main', root_path %> | <%= link_to 'Log Out', logout_path, method: :delete %>
+    <body>
+        <% if current_user %>
+        <%= "#{current_user.alias.capitalize!} is searching the RADAR" %>
+        |
+        <%= link_to 'Main', root_path %>
+        |
+        <%= link_to 'Log Out', logout_path, method: :delete %>
     <% else %>
-      <%= link_to 'Main', root_path %> | <%= link_to 'Log In', login_path %> or <%= link_to 'Join us', new_user_path %>
-    <% end %>
-    <hr>
-    <% if notice %>
-      <%= notice %>
-    <% end %>
+        <%= link_to 'Main', root_path %>
+        |
+        <%= link_to 'Log In', login_path %>
+        or
+        <%= link_to 'Join us', new_user_path %>
+        <% end %>
+        <hr>
+        <% if notice %>
+        <%= notice %>
+        <% end %>
 
-    <% if alert %>
-      <%= alert %>
-    <% end %>
-    <%= yield %>
-  </body>
+        <% if alert %>
+        <%= alert %>
+        <% end %>
+        <%= yield %>
+    </body>
 </html>

@@ -1,36 +1,36 @@
 <h1>Edit this Post</h1>
 
 <%= form_for @post do |f| %>
-    <div>
-    Topic <%= f.select :topic, options_for_select([["Select One Topic", ""], "Unsolved Mysteries", "Space & Astronomy", "Paranormal", "Conspiracies"]), :class => 'genForm_dropBox' %>
-    </div>
+<div>
+    Topic
+    <%= f.select :topic, options_for_select([["Select One Topic", ""], "Unsolved Mysteries", "Space & Astronomy", "Paranormal", "Conspiracies"]), :class => 'genForm_dropBox' %>
+</div>
 
-    <div>
-        <%= f.label :subject %>
-        <%= f.text_field :subject %>
-    </div>
+<div>
+    <%= f.label :subject %>
+    <%= f.text_field :subject %>
+</div>
 
-    <div>
-        <%= f.label :place %>
-        <%= f.text_field :place %>
-    </div>
+<div>
+    <%= f.label :place %>
+    <%= f.text_field :place %>
+</div>
 
-    <div>
-        <%= f.label :date %>
-        <%= f.text_field :date %>
-    </div>
+<div>
+    <%= f.label :date %>
+    <%= f.text_field :date %>
+</div>
 
-    <div>
-        <%= f.label :data %>
-        <%= f.text_area :data %>
-    </div>
+<div>
+    <%= f.label :data %>
+    <%= f.text_area :data %>
+</div>
 
-
-    <div>
-        <%= f.label :comments %>
-        <%= f.text_area :comments %>
-    </div>
-    <%= f.submit "Confirm Editions" %>
+<div>
+    <%= f.label :comments %>
+    <%= f.text_area :comments %>
+</div>
+<%= f.submit "Confirm Editions" %>
 
 <% end %>
 
