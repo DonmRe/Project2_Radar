@@ -24,8 +24,10 @@
 
     <br>
     <tr>
-        By <%= c.user.alias %> - <%= c.comment %>
-        <%= link_to "Delete", post_comment_path(@post, c), method: :delete if current_user == c.user %>
+        Posted by <%= c.user.alias %> <br>
+        <%= time_ago_in_words c.created_at %> ago<br>
+        <%= c.comment %>
+        <%= link_to "Delete", post_comment_path(@post, c), method: :delete if current_user.is_admin ||= current_user == c.user %>
     </tr><br>
 </table>
 <hr>

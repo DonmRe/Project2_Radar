@@ -1,37 +1,31 @@
 <h1>RADAR</h1>
-<ul>
+<div class="large-6 columns">
     <% @posts.each do |post| %>
     <hr><hr>
-    <h1>
-        <%= post.subject %>
-    </h1>
-    <hr>
+    <div class="column">
+        <div class="card">
+            <img src="assets/img/generic/rectangle-1.jpg">
+            <div class="card-section">
+                <h4><%= post.subject %></h4>
+                <h5><%= post.topic %>
+                    <h5>
+                        <h6>Location
+                            <%= post.place %>
+                            | Date
+                            <%= post.date %></h6>
+                        <p>
+                            <%= post.data[0...200] %>
+                        </p>
 
-    <h3>
-        <%= post.topic %>
-    </h3>
-    <hr>
+                        Comments
+                        <span class="secondary badge">
+                            <%= post.comments.count  %>
+                        </span>
 
-    <p>
-        Location
-        <%= post.place %>
-        | Date
-        <%= post.date %></p>
+                            
+                            <%= link_to "Details", post_path(post) %>
+                    </div>
+                </div>
+            </div>
 
-    <div>
-        Data
-        <%= post.data[0...200] %>...
-    </div>
-
-    <div>
-      
-    </div>
-
-    <br>
-    Views  | [<%= post.comments.count  %>]
-    <%= link_to "Details", post_path(post) %>
-
-    <hr>
-    <% end %>
-
-</ul>
+            <% end %>
