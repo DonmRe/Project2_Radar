@@ -1,11 +1,11 @@
 <%= form_for [@post, @user, @comment] do |f| %>
-<table>
+<div>
 
-    <tr>
-        <th>
+
+        <p>
             <%= f.text_area :comment %>
-        </th>
-    </tr>
-  </table>
+        </p>
+
+  </div>
   <%= f.submit "Comment" %>
   <% end %>
