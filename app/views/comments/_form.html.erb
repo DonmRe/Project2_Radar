@@ -3,9 +3,10 @@
 
 
         <p>
-            <%= f.text_area(:comment, rows:3, class: "form-control")%>
+            <%= f.text_area(:comment, rows:2, class: "form-control")%>
         </p>
 
   </div>
-  <%= f.submit "Comment" %>
+  <%= f.submit "Comment", class: "btn btn-default"%>
+
   <% end %>

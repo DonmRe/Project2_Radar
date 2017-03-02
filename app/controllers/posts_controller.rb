@@ -6,6 +6,10 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    @unsolved_mysteries = Post.where(:topic => "Unsolved Mysteries").last
+    @space_and_astronomy = Post.where(:topic => "Space and Astronomy").last
+    @paranormal = Post.where(:topic => "Paranormal").last
+    @conspiracies = Post.where(:topic => "Conspiracies").last
   end
   def show
     @comments = Comment.all
@@ -27,14 +31,14 @@ class PostsController < ApplicationController
   end
   def update
     if @post.update_attributes(post_params)
-      redirect_to posts_path, alert: "Post Deleted"
+      redirect_to posts_path, notice: "Post has been updated"
     else
       render :edit
     end
   end
   def destroy
     @post.destroy
-    redirect_to :dashboard
+    redirect_to :dashboard, alert: "Post has been deleted"
   end
 
 private

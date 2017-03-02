@@ -13,7 +13,7 @@
         | DATE
         <%= @post.date %></p>
     <div class="form-group">
-        <textarea class="form-control" rows="8" id="comment"><%= @post.data[0...200] %></textarea>
+        <textarea class="form-control" rows="6" id="comment"><%= @post.data %></textarea>
     <%= render 'comments/form' %>
     </div>
     <span class="badge">PREVIOUS COMMENTS |  <%= @post.comments.count  %> </span>
@@ -24,7 +24,7 @@
       <div class="comments-cont">
         <label for="comment">Posted by | <%= c.user.alias.upcase! %> | <%= time_ago_in_words c.created_at %>
             ago</label>
-        <textarea class="form-control" rows="3" id="comment"><%= c.comment %> </textarea>
+        <textarea class="form-control" rows="2" id="comment"><%= c.comment %> </textarea>
       <%= link_to "Delete", post_comment_path(@post, c), method: :delete if current_user.is_admin ||= current_user == c.user %>
       <hr>
         <% end %>

@@ -5,6 +5,12 @@
   height: 350px;
   overflow-y: scroll;
 }
+#topstories {
+  height: 300px;
+  width: 80%;
+  overflow-y: hidden;
+  overflow-x: auto;
+}
 #radarh {
   height: 100px;
 }
@@ -38,4 +44,20 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
 a {
     color: red;
     text-decoration: none;
+}
+.row-fluid {
+    overflow: auto;
+    white-space: nowrap;
+}
+
+.row-fluid .col-lg-3 {
+     display: inline-block;
+     float: none;
+}
+.thumbnail .caption {
+    padding: 0px;
+    color: #333;
+}
+b, strong {
+    font-weight: 400;
 }
