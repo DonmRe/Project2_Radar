@@ -5,8 +5,6 @@ Rails.application.routes.draw do
 
   get 'admin/dashboard', as: :dashboard
 
-  get 'pages/secret'
-
   root "posts#index"
   # get "posts/" => "posts#index"
   #

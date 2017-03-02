@@ -1,28 +1,17 @@
-<h1>Attempt Access</h1>
+<div class="container">
+  <h1>Attempt Access</h1>
 <%= form_for :login do |f| %>
   <div class="form-group">
     <%= f.label :email %>
-    <%= f.text_field :email, autofocus: true %>
-</div>
+    <%= f.text_field :email, autofocus: true, class:"form-control", id:"log-f"%>
 <div>
     <%= f.label :password %>
-    <%= f.password_field :password %>
+    <%= f.password_field :password, class:"form-control", id:"log-f" %>
 </div>
+<br>
 <div>
-    <%= f.submit "Confirm" %>
+    <%= f.submit "Confirm", class: "btn btn-default" %>
+</div>
 </div>
 <% end %>
-
-<!-- 
-<form>
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-  </div>
-
-
-  <button type="submit" class="btn btn-default">Submit</button>
-</form> -->
+</div>

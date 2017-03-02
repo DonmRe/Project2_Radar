@@ -55,3 +55,6 @@ ruby '2.3.3'
 
 #bootstrap-sass
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
+
+#validates email format
+gem 'validates_email_format_of', '~> 1.6', '>= 1.6.3'
