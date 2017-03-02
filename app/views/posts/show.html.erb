@@ -1,5 +1,4 @@
 <ul>
-
     <h1>
         <%= @post.subject %>
     </h1>
@@ -13,27 +12,21 @@
         <%= @post.place %>
         | DATE
         <%= @post.date %></p>
-
-    <div>
-        DATA
-        <%= @post.data %>
+    <div class="form-group">
+        <textarea class="form-control" rows="8" id="comment"><%= @post.data[0...200] %></textarea>
+    <%= render 'comments/form' %>
     </div>
+    <span class="badge">PREVIOUS COMMENTS |  <%= @post.comments.count  %> </span>
     <hr>
-    <table>COMMENTS</br>
-    <% @post.comments.each do |c| %>
 
-    <br>
-    <tr>
-        Posted by <%= c.user.alias %> <br>
-        <%= time_ago_in_words c.created_at %> ago<br>
-        <%= c.comment %>
-        <%= link_to "Delete", post_comment_path(@post, c), method: :delete if current_user.is_admin ||= current_user == c.user %>
-    </tr><br>
-</table>
-<hr>
-<% end %>
-<div>
-    LEAVE A COMMENT
-</div>
-<br>
-<%= render 'comments/form' %>
+    <% @post.comments.each do |c| %>
+    <div class="form-group">
+      <div class="comments-cont">
+        <label for="comment">Posted by | <%= c.user.alias.upcase! %> | <%= time_ago_in_words c.created_at %>
+            ago</label>
+        <textarea class="form-control" rows="3" id="comment"><%= c.comment %> </textarea>
+      <%= link_to "Delete", post_comment_path(@post, c), method: :delete if current_user.is_admin ||= current_user == c.user %>
+      <hr>
+        <% end %>
+      </div>
+    </div>

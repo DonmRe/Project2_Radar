@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
   def authorize
-    redirect_to login_path, alert: "Access Denied, you need to log in in order to see more" if current_user.nil?
+    redirect_to login_path, alert: "Access Denied, you haven't logged in to the Radar" if current_user.nil?
   end
   def is_admin
     @is_admin = User.find(session[:is_admin]) if current_user.is_admin?

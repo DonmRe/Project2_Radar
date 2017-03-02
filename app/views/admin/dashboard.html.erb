@@ -1,7 +1,7 @@
 <h1>WELCOME ADMIN</h1>
 <%= link_to "New", :new_post %>  |  <%= link_to "Main list", posts_path %>
-<ul>
     <% @posts.each do |post| %>
+    <ul>
     <li>
         <hr>
         TOPIC
@@ -15,8 +15,10 @@
         DATE
         <%= post.date %>
         <br>
-        DATA
-        <%= post.data %>
+        <div class="form-group">
+            <label for="comment">DATA</label>
+            <textarea class="form-control" rows="5" id="comment"><%= post.data[0...200] %></textarea>
+        </div>
         <hr>
     </li>
     <%= link_to "Delete this post!", post_path(post), method: :delete, data: { confirm: "Are you sure you want to delete this post?"} %>

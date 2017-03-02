@@ -14,3 +14,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+Setimeout function (){
+  (${'.alert'}.slideUp), 3000
+}
