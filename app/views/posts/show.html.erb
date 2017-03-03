@@ -1,47 +1,47 @@
 <div class="container mainc">
-<div class="container mainc">
-    <h1>
-        <%= @post.subject %>
-    </h1>
+    <div class="container mainc">
+        <h1>
+            <%= @post.subject %>
+        </h1>
 
-    <h3>
-        <%= @post.topic %>
-    </h3>
+        <h3>
+            <%= @post.topic %>
+        </h3>
 
-    <p>
-        <span class="label label-default">LOCATION</span>
-        <%= @post.place %>
-        |
-        <span class="label label-default">
-            DATE</span>
-        <%= @post.date %></p>
-    <div class="form-group">
-        <textarea class="form-control" rows="6" id="comment"><%= @post.data %></textarea>
-        <%= render 'comments/form' %>
+        <p>
+            <span class="label label-default">Place</span>
+            <%= @post.place %>
+            |
+            <span class="label label-default">
+                DATE</span>
+            <%= @post.date %></p>
+        <div class="form-group">
+            <textarea class="form-control" rows="6" id="comment"><%= @post.data %></textarea>
+            <%= render 'comments/form' %>
+        </div>
+        <span class="badge">PREVIOUS COMMENTS |
+            <%= @post.comments.count  %>
+        </span>
+        <hr>
     </div>
-    <span class="badge">PREVIOUS COMMENTS |
-        <%= @post.comments.count  %>
-    </span>
-    <hr>
-</div>
-<div class="container mainc">
-    <% @post.comments.each do |c| %>
-    <div class="form-group">
-        <div class="comments-cont">
-            <label for="comment">Posted by |
-                <%= c.user.alias.upcase %>
-                |
-                <%= time_ago_in_words c.created_at %>
-                ago</label>
-            <textarea class="form-control" rows="2" id="comment"><%= c.comment %>
-            </textarea>
+    <div class="container mainc">
+        <% @post.comments.each do |c| %>
+        <div class="form-group">
+            <div class="comments-cont">
+                <label for="comment">Posted by |
+                    <%= c.user.alias.upcase %>
+                    |
+                    <%= time_ago_in_words c.created_at %>
+                    ago</label>
+                <textarea class="form-control" rows="2" id="comment"><%= c.comment %>
+                </textarea>
 
-            <%= link_to "Delete", post_comment_path(@post, c), method: :delete if current_user.is_admin || current_user == c.user %>
-            <%= link_to "Edit", edit_post_comment_path(@post, c), method: :edit if current_user.is_admin || current_user == c.user %>
+                <%= link_to "Delete", post_comment_path(@post, c), method: :delete if current_user.is_admin || current_user == c.user %>
+                <%= link_to "Edit", edit_post_comment_path(@post, c), method: :edit if current_user.is_admin || current_user == c.user %>
 
-            <hr>
-            <% end %>
-          </div>
+                <hr>
+                <% end %>
+            </div>
         </div>
     </div>
 </div>

@@ -1,17 +1,17 @@
 <div class="container mainci">
-  <h1>Attempt Access</h1>
-<%= form_for :login do |f| %>
-  <div class="form-group">
-    <%= f.label :email %>
-    <%= f.text_field :email, autofocus: true, class:"form-control", id:"log-f"%>
-<div>
-    <%= f.label :password %>
-    <%= f.password_field :password, class:"form-control", id:"log-f" %>
-</div>
-<br>
-<div>
-    <%= f.submit "Confirm", class: "btn btn-default" %>
-</div>
-</div>
-<% end %>
+    <h1>Attempt Access</h1>
+    <%= form_for :login do |f| %>
+    <div class="form-group">
+        <%= f.label :email %>
+        <%= f.text_field :email, autofocus: true, class:"form-control", id:"log-f"%>
+        <div>
+            <%= f.label :password %>
+            <%= f.password_field :password, class:"form-control", id:"log-f" %>
+        </div>
+        <br>
+        <div>
+            <%= f.submit "Confirm", class: "btn btn-default" %>
+        </div>
+    </div>
+    <% end %>
 </div>

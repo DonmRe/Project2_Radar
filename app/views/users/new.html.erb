@@ -1,33 +1,33 @@
 <div class="container mainci">
-<h1>Create a new profile</h1>
-<%= form_for @user do |f| %>
-  <div class="form-group">
-<div>
-    <%= f.label :name %>
-    <%= f.text_field :name, autofocus: true, class:"form-control", id:"log-f"%>
-</div>
-<div>
-    <%= f.label :email %>
-    <%= f.text_field :email, class:"form-control", id:"log-f"%>
-</div>
+    <h1>Create a new profile</h1>
+    <%= form_for @user do |f| %>
+    <div class="form-group">
+        <div>
+            <%= f.label :name %>
+            <%= f.text_field :name, autofocus: true, class:"form-control", id:"log-f"%>
+        </div>
+        <div>
+            <%= f.label :email %>
+            <%= f.text_field :email, class:"form-control", id:"log-f"%>
+        </div>
 
-<div>
-    <%= f.label :alias %>
-    <%= f.text_field :alias, class:"form-control", id:"log-f" %>
-</div>
+        <div>
+            <%= f.label :alias %>
+            <%= f.text_field :alias, class:"form-control", id:"log-f" %>
+        </div>
 
-<div>
-    <%= f.label :password %>
-    <%= f.password_field :password, class:"form-control", id:"log-f" %>
-</div>
-<div>
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation, class:"form-control", id:"log-f"%>
-</div>
-<br>
-<div>
-    <%= f.submit "Confirm", class: "btn btn-default" %>
-</div>
-</div>
-<% end %>
+        <div>
+            <%= f.label :password %>
+            <%= f.password_field :password, class:"form-control", id:"log-f" %>
+        </div>
+        <div>
+            <%= f.label :password_confirmation %>
+            <%= f.password_field :password_confirmation, class:"form-control", id:"log-f"%>
+        </div>
+        <br>
+        <div>
+            <%= f.submit "Confirm", class: "btn btn-default" %>
+        </div>
+    </div>
+    <% end %>
 </div>
