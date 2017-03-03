@@ -1,12 +1,9 @@
 <%= form_for [@post, @user, @comment] do |f| %>
 <div>
+    <p>
+        <%= f.text_area(:comment, rows:2, class: "form-control")%>
+    </p>
+</div>
+<%= f.submit "Comment", class: "btn btn-default"%>
 
-
-        <p>
-            <%= f.text_area(:comment, rows:2, class: "form-control")%>
-        </p>
-
-  </div>
-  <%= f.submit "Comment", class: "btn btn-default"%>
-
-  <% end %>
+<% end %>

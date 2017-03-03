@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <title>RADᗡAЯ</title>
         <%= csrf_meta_tags %>
@@ -16,62 +15,73 @@
 
     <body>
       <img src="http://i.imgur.com/2ukFiLt.jpg" id='radarh'>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <% if current_user && current_user.is_admin %>
-        <div class="alert alert-success">
-            <strong><%= "BIG BOSS IS IN DA HOUSE!" %>
-                <strong></div>
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <ul class="nav nav-pills">
-                            <li role="presentation" class="active"><%= link_to 'Main', root_path %></li>
-                            <li role="presentation" class="active"><%= link_to 'Dashboard', dashboard_path %></li>
-                            <li role="presentation" class="active"><%= link_to 'Log Out', logout_path, method: :delete %></li>
-                        </ul>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <% if current_user && current_user.is_admin %>
+      <div class="container mainc">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <ul class="nav nav-pills">
+                    <li role="presentation" class="active"><%= link_to 'Main', root_path %></li>
+                    <li role="presentation" class="active"><%= link_to 'Dashboard', dashboard_path %></li>
+                    <li role="presentation" class="active"><%= link_to 'Log Out', logout_path, method: :delete %></li>
+                    <div class="alert alert-success">
+                        <strong><%= "BIG BOSS IS IN DA HOUSE!" %>
+                            <strong></div>
+                            </ul>
+                            </div>
+                            <% if alert %>
+                            <div class="flashed alert alert-danger">
+                                <strong><%= alert %></strong>
+                            </div>
                     </div>
-                </div>
+                  </div>
+                  <%end%>
                 <% elsif current_user %>
-                <div class="alert alert-info">
-                    <strong><%= "#{current_user.alias.capitalize!} is searching the RADAR" %>  <span class="glyphicon glyphicon-eye-open">
-                </div>
+                <div class="container mainc">
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <ul class="nav nav-pills">
                             <li role="presentation" class="active"><%= link_to 'Main', root_path %></li>
                             <li role="presentation" class="active"><%= link_to 'Log Out', logout_path, method: :delete %></li>
-                        </ul>
-                    </div>
-                </div>
-            <% else %>
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <ul class="nav nav-pills">
-                            <li role="presentation" class="active"><%= link_to 'Main', root_path %></li>
-                            <li role="presentation" class="active"><%= link_to 'Log In', login_path %></li>
-                            <li role="presentation" class="active"><%= link_to 'Join us', new_user_path %></li>
-                        </ul>
+                            <div class="alert alert-info">
+                                <strong><%= "#{current_user.alias} is searching the RADAR" %></strong>
+                                    <span class="glyphicon glyphicon-eye-open"></span></div>
+                                    </ul>
+                                    <% if alert %>
+                                    <div class="flashed alert alert-notice">
+                                        <strong><%= notice %></strong>
+                                    </div>
+                            </div>
+                          </div>
+                        </div>
                         <% end %>
-                    </div>
-                </div>
-                <div class="container">
-                <% if notice %>
-                <div class="alert alert-info">
-                    <strong><%= notice %></strong>
-                </div>
-                <% end %>
+                    <% else %>
+                    <div class="container mainc">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <ul class="nav nav-pills">
+                                    <li role="presentation" class="active"><%= link_to 'Main', root_path %></li>
+                                    <li role="presentation" class="active"><%= link_to 'Log In', login_path %></li>
+                                    <li role="presentation" class="active"><%= link_to 'Join us', new_user_path %></li>
+                                  </ul>
+                                    <% if alert %>
+                                    <div class="flashed alert alert-notice">
+                                        <strong><%= alert %></strong>
+                                    </div>
+                            </div>
+                            </div>
+                            <% end %>
+                        </div>
+                        <% end %>
 
-                <% if alert %>
-                <div class="alert alert-danger">
-                    <strong><%= alert %></strong>
-                </div>
-                <% end %>
-                <script> seTimeout function (){
-                  (${'.alert'}.slideUp), 3000
-                }
-                seTimeout ()
+                        <%= yield %>
+                        <script src="js/bootstrap.min.js"></script>
+                    </body>
+                </html>
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                        setTimeout(function () {
+                            $('.flashed').remove();
+                        }, 4000);
+                    })
                 </script>
-                <%= yield %>
-              </div>
-                <script src="js/bootstrap.min.js"></script>
-            </body>
-        </html>

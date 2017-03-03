@@ -15,7 +15,8 @@ class UsersController < ApplicationController
     @user.alias.upcase!
 
     if @user.save
-      flash[:notice] = "Welcome to our Radar"
+      session[:user_id] = @user.id.to_s
+      flash[:alert] = "Welcome to our Radar"
       redirect_to root_path
     else
       flash.now.alert = "Attempt failed. Please check your email, password and alias and try again."

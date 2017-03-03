@@ -1,5 +1,6 @@
+<div class="container">
 <h1>WELCOME ADMIN</h1>
-<%= link_to "New", :new_post %>  |  <%= link_to "Main list", posts_path %>
+  <%= link_to "New", :new_post %>  |  <%= link_to "Main list", posts_path %>
     <% @posts.each do |post| %>
     <ul>
     <li>
@@ -25,3 +26,4 @@
     <%= link_to "EDIT", edit_post_path(post) %>
 </ul>
 <% end %>
+</div>

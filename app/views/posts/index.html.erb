@@ -1,37 +1,40 @@
 <title>RADᗡAR</title>
-<div class="page-header">
-    <h1>THIS IS RADAR</h1>
-</div>
-<medium>This are our top stories for today</medium><hr>
-<div class="row">
-    <div class="span11" style="overflow: auto">
-        <div class="thumbnail">
+<div class="container mainci">
+    <div class="page-header">
+        <h1>THIS IS RADAR</h1>
+    </div>
+    <medium>This are our top stories for today</medium><hr>
+    <div class="row">
+        <div class="span11" style="overflow: auto">
+            <div class="thumbnail">
 
-          <div class="row-fluid">
-                <% @posts.each do |post| %>
-                <div class="col-lg-3">
-                    <h4><%= post.subject %></h4>
-                    <h5><%= post.topic %></h5>
-                    <h6>Location:
-                        <%= post.place %>
-                        | Date:
-                        <%= post.date %></h6>
+                <div class="row-fluid">
+                    <% @posts.each do |post| %>
+                    <div class="col-lg-3">
+                        <h4><%= post.subject %></h4>
+                        <h5><%= post.topic %></h5>
+                        <h6>Location:
+                            <%= post.place %>
+                            | Date:
+                            <%= post.date %></h6>
 
-                    <div class="caption">
-                        <label for="comment"></label>
-                        <textarea class="form-control" rows="5" id="comment"><%= post.data[0...200]%>...</textarea>
+                        <div class="caption">
+                            <label for="comment"></label>
+                            <textarea class="form-control" rows="5" id="comment"><%= post.data[0...200]%>...</textarea>
+                        </div>
+
+                        <div class="comnt">Comments
+                            <%= post.comments.count  %>
+                        </div>
+                        <div class="btn more">
+                            <%= link_to "More Details", post_path(post) %>
+                        </div>
+
                     </div>
-
-                    <medium>Comments
-                        <%= post.comments.count  %>
-                        <%= link_to "MORE", post_path(post) %>
-                    </medium>
-
-
+                    <% end %>
                 </div>
-                <% end %>
-              </div>
-              <br>
+                <br>
+            </div>
         </div>
     </div>
 </div>
