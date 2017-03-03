@@ -6,16 +6,16 @@ Rails.application.routes.draw do
   get 'admin/dashboard', as: :dashboard
 
   root "posts#index"
-  # get "posts/" => "posts#index"
-  #
+  get "posts/" => "posts#index"
+
   # get "posts/new" => "posts#new", as: :new_post
-  # post "posts/" => "posts#create"
-  #
+  post "posts/" => "posts#create"
+
   # get "posts/:id/edit" => "posts#edit", as: :edit_post
-  # patch "posts/:id" => "posts#update"
-  #
+  patch "posts/:id" => "posts#update"
+
   # get "posts/:id" => "posts#show", as: :post
-  # delete "posts/:id" => "posts#destroy", as: :destroy_post
+  delete "posts/:id" => "posts#destroy", as: :destroy_post
 
   ## user routes
   get "users/new" => "users#new", as: :new_user

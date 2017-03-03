@@ -29,6 +29,11 @@ class CommentsController < ApplicationController
     end
   end
   def edit
+    @user = current_user
+    @post = Post.find(params[:post_id])
+    @comment.user_id = @user.id
+    @comment.post_id = @post.id
+    @comment = Comment.find(params[:comment_id])
   end
   def update
     if @comment.update_attributes(comment_params)

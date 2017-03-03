@@ -27,15 +27,15 @@
                     <div class="alert alert-success">
                         <strong><%= "BIG BOSS IS IN DA HOUSE!" %>
                             <strong></div>
-                            </ul>
-                            </div>
-                            <% if alert %>
-                            <div class="flashed alert alert-danger">
+                              <% if alert %>
+                              <div class="flashed alert alert-danger">
                                 <strong><%= alert %></strong>
+                              </div>
+                              <%end%>
+                            </ul>
                             </div>
                     </div>
                   </div>
-                  <%end%>
                 <% elsif current_user %>
                 <div class="container mainc">
                 <div class="panel panel-default">
@@ -46,15 +46,15 @@
                             <div class="alert alert-info">
                                 <strong><%= "#{current_user.alias} is searching the RADAR" %></strong>
                                     <span class="glyphicon glyphicon-eye-open"></span></div>
-                                    </ul>
                                     <% if alert %>
-                                    <div class="flashed alert alert-notice">
-                                        <strong><%= notice %></strong>
+                                    <div class="flashed alert alert-danger">
+                                      <strong><%= alert %></strong>
                                     </div>
+                                    <%end%>
+                                    </ul>
                             </div>
                           </div>
                         </div>
-                        <% end %>
                     <% else %>
                     <div class="container mainc">
                         <div class="panel panel-default">
@@ -63,25 +63,24 @@
                                     <li role="presentation" class="active"><%= link_to 'Main', root_path %></li>
                                     <li role="presentation" class="active"><%= link_to 'Log In', login_path %></li>
                                     <li role="presentation" class="active"><%= link_to 'Join us', new_user_path %></li>
-                                  </ul>
                                     <% if alert %>
-                                    <div class="flashed alert alert-notice">
-                                        <strong><%= alert %></strong>
+                                    <div class="flashed alert alert-danger">
+                                      <strong><%= alert %></strong>
                                     </div>
+                                    <%end%>
+                                  </ul>
                             </div>
                             </div>
-                            <% end %>
                         </div>
                         <% end %>
-
+                        <script type="text/javascript">
+                        $(document).ready(function () {
+                          setTimeout(function () {
+                            $('.flashe').remove();
+                          }, 4000);
+                        })
+                        </script>
                         <%= yield %>
                         <script src="js/bootstrap.min.js"></script>
                     </body>
                 </html>
-                <script type="text/javascript">
-                    $(document).ready(function () {
-                        setTimeout(function () {
-                            $('.flashed').remove();
-                        }, 4000);
-                    })
-                </script>

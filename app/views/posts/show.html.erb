@@ -1,4 +1,5 @@
-
+<div class="container mainc">
+<div class="container mainc">
     <h1>
         <%= @post.subject %>
     </h1>
@@ -22,7 +23,8 @@
         <%= @post.comments.count  %>
     </span>
     <hr>
-
+</div>
+<div class="container mainc">
     <% @post.comments.each do |c| %>
     <div class="form-group">
         <div class="comments-cont">
@@ -33,8 +35,13 @@
                 ago</label>
             <textarea class="form-control" rows="2" id="comment"><%= c.comment %>
             </textarea>
-            <%= link_to "Delete", post_comment_path(@post, c), method: :delete if current_user.is_admin ||= current_user == c.user %>
+
+            <%= link_to "Delete", post_comment_path(@post, c), method: :delete if current_user.is_admin || current_user == c.user %>
+            <%= link_to "Edit", edit_post_comment_path(@post, c), method: :edit if current_user.is_admin || current_user == c.user %>
+
             <hr>
             <% end %>
+          </div>
         </div>
     </div>
+</div>
