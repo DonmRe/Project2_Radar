@@ -29,10 +29,10 @@
                             <strong></div>
                             </ul>
                             </div>
-                            <% if alert %>
+                            <!-- <% if alert %>
                             <div class="flashed alert alert-danger">
                                 <strong><%= alert %></strong>
-                            </div>
+                            </div> -->
                     </div>
                   </div>
                   <%end%>
@@ -47,8 +47,8 @@
                                 <strong><%= "#{current_user.alias} is searching the RADAR" %></strong>
                                     <span class="glyphicon glyphicon-eye-open"></span></div>
                                     </ul>
-                                    <% if alert %>
-                                    <div class="flashed alert alert-notice">
+                                    <% if notice %>
+                                    <div class="flashed alert alert-info">
                                         <strong><%= notice %></strong>
                                     </div>
                             </div>
@@ -64,9 +64,9 @@
                                     <li role="presentation" class="active"><%= link_to 'Log In', login_path %></li>
                                     <li role="presentation" class="active"><%= link_to 'Join us', new_user_path %></li>
                                   </ul>
-                                    <% if alert %>
-                                    <div class="flashed alert alert-notice">
-                                        <strong><%= alert %></strong>
+                                    <% if notice %>
+                                    <div class="flashed alert alert-info">
+                                        <strong><%= notice %></strong>
                                     </div>
                             </div>
                             </div>
