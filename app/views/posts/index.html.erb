@@ -21,14 +21,14 @@
 
                         <div class="caption">
                             <label for="comment"></label>
-                            <textarea class="form-control" rows="5" id="comment"><%= post.data[0...200]%>...</textarea>
+                            <textarea class="form-control" rows="5" id="comment"><%= post.data%>...</textarea>
                         </div>
 
                         <div class="comnt">Comments
                             <%= post.comments.count  %>
                         </div>
                         <div class="btn more">
-                            <%= link_to "More Details", posts_path(post) %>
+                            <%= link_to "More Details", post_path(post) %>
                         </div>
 
                     </div>

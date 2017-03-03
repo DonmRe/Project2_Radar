@@ -11,12 +11,12 @@
 
 
 #INSTALLATION  INSTRUCTIONS#
-<ol>
-<li>Clone Repository</li>
-<li>Open app directory</li>
-<li>install gems</li>
-<li>Open Rails server</li>
-<li>go to localhost:3000 in your web browser</li>
+<ul>
+<li>Step 1: Clone the repository from GitHub.</li>
+<li> Step 2: Bundle Install gems.</li>
+<li> Step 3: Create and migrate the postgresql database.</li>
+<li>  Step 4: Open Rails server.</li>
+<li>  Step 5: Open:localhost:3000 in a browser</li>
 </ol>
 
 #INTRO
@@ -59,13 +59,13 @@ This application will run a database of articles on diferent topics allowing use
 **The minimum project requirements are**
 	
   
-  - Display **articles** along with support data (links to sources, images and videos)
+ 
   
   - Allow users to set up **secure accounts** and **alias**.
   
   - Allow **users** to visualize **articles**, **comment** and **read other users comments**  
   
-  - Allow users to **edit or delete** comments that have been posted
+  - Allow users to **delete** comments that have been posted
 
 <br>
 <hr>
@@ -74,7 +74,9 @@ This application will run a database of articles on diferent topics allowing use
 
 ![STRETCH](http://i.imgur.com/jG1l6zr.jpg)
 
+
 - Allow users to:
+  - Display **articles** along with support data (links to sources, images and videos)
 	- 	**run a search** based on parameters of their choice.
 	
 	-  **post new articles** and related data.
