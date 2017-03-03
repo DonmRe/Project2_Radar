@@ -27,6 +27,7 @@
                     <div class="alert alert-success">
                         <strong><%= "BIG BOSS IS IN DA HOUSE!" %>
                             <strong></div>
+<<<<<<< HEAD
                               <% if alert %>
                               <div class="flashed alert alert-danger">
                                 <strong><%= alert %></strong>
@@ -34,6 +35,14 @@
                               <%end%>
                             </ul>
                             </div>
+=======
+                            </ul>
+                            </div>
+                            <!-- <% if alert %>
+                            <div class="flashed alert alert-danger">
+                                <strong><%= alert %></strong>
+                            </div> -->
+>>>>>>> 988681b68d96a95285deb6c7ab4fe48ce8b93d1c
                     </div>
                   </div>
                 <% elsif current_user %>
@@ -46,9 +55,16 @@
                             <div class="alert alert-info">
                                 <strong><%= "#{current_user.alias} is searching the RADAR" %></strong>
                                     <span class="glyphicon glyphicon-eye-open"></span></div>
+<<<<<<< HEAD
                                     <% if alert %>
                                     <div class="flashed alert alert-danger">
                                       <strong><%= alert %></strong>
+=======
+                                    </ul>
+                                    <% if notice %>
+                                    <div class="flashed alert alert-info">
+                                        <strong><%= notice %></strong>
+>>>>>>> 988681b68d96a95285deb6c7ab4fe48ce8b93d1c
                                     </div>
                                     <%end%>
                                     </ul>
@@ -63,9 +79,16 @@
                                     <li role="presentation" class="active"><%= link_to 'Main', root_path %></li>
                                     <li role="presentation" class="active"><%= link_to 'Log In', login_path %></li>
                                     <li role="presentation" class="active"><%= link_to 'Join us', new_user_path %></li>
+<<<<<<< HEAD
                                     <% if alert %>
                                     <div class="flashed alert alert-danger">
                                       <strong><%= alert %></strong>
+=======
+                                  </ul>
+                                    <% if notice %>
+                                    <div class="flashed alert alert-info">
+                                        <strong><%= notice %></strong>
+>>>>>>> 988681b68d96a95285deb6c7ab4fe48ce8b93d1c
                                     </div>
                                     <%end%>
                                   </ul>
