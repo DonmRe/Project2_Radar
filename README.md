@@ -6,9 +6,12 @@
 
 =======================================
 
-
+<br>
 
 # INSTALLATION  INSTRUCTIONS
+
+<br>
+
 <ul>
 <li>Step 1: Clone the repository from GitHub.</li>
 <li> Step 2: Bundle Install gems.</li>
@@ -17,13 +20,29 @@
 <li>  Step 5: Open:localhost:3000 in a browser</li>
 </ul>
 
+<br>
+<hr>
+<br>
+
 # INTRO
+
+<br>
 
 Every day we choose to live our lives, to get up an go through our day but no matter what our believes, conceptions or current state of consciousness is, there are many things that are there that we can't or we want to know about it. But there are always in our Radar.
   
+<br>
+<hr>
+<br>
+
 # APPROACH
 
+<br>
+
 This application will run a database of articles on diferent topics allowing users to create a password protected profile generate an alias, access this articles, post comments on them and also being able to read some other user comments.
+
+<br>
+<hr>
+<br>
 
 # USER STORIES
 
@@ -33,10 +52,10 @@ This application will run a database of articles on diferent topics allowing use
 
  *https://trello.com/b/nw8Y4vQJ/wdi43-project2-radar*
  
- <br>
- 
- <hr>
 <br>
+<hr>
+<br>
+
 # ERD
 
 <br>
@@ -44,20 +63,20 @@ This application will run a database of articles on diferent topics allowing use
 ![ERD](http://i.imgur.com/MtXJ1k5.png)
 
 <br>
-<br>
 <hr>
+<br>
+
 
 # WIREFRAME
-
-<br>
 
 <br>
 
 ![MVP](http://i.imgur.com/o2uGGKZ.jpg)
 
 <br>
-<br>
 <hr>
+<br>
+
 # MVP
 
 <br>
@@ -72,6 +91,7 @@ This application will run a database of articles on diferent topics allowing use
 
 <br>
 <hr>
+<br>
 
 # STRECTCH GOALS
 
@@ -97,6 +117,8 @@ This application will run a database of articles on diferent topics allowing use
 - Play music for customer while using the application.
 
 <br>
+<hr>
+<br>
 
 # TECHNOLOGIES USED
 
@@ -114,6 +136,8 @@ This application will run a database of articles on diferent topics allowing use
 
 
 <br>
+<hr>
+<br>
 
 # UNSOLVED PROBLEMS
 
@@ -121,4 +145,6 @@ This application will run a database of articles on diferent topics allowing use
 
 - Coming soon (hopefully not too many!)
 
+<br>
+<hr>
 <br>
